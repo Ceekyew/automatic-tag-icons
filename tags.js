@@ -29,7 +29,7 @@ function splitTags(){
     }
 }
 
-function borders(){
+/*function borders(){
 
     for(i=0; i<x; i++){
 
@@ -41,12 +41,12 @@ function borders(){
 
     }
 
-}
+}*/
 
 
 function tagpage(){
     splitTags();
-    borders();
+    //borders();
 }
 
 window.onload = tagpage;
