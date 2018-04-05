@@ -1,10 +1,10 @@
 var getLists = document.getElementsByTagName('ul');
 var getListsNum = document.getElementsByTagName('ul').length;
-var x;
 
 
-var showListNumber = document.getElementById("info");
-var showListNumber2 = document.getElementById("info2");
+var showInfo = document.getElementById("info");
+var showInfo2 = document.getElementById("info2");
+var showInfo3 = document.getElementById("info3");
 
 
 
@@ -12,26 +12,18 @@ function getListItems(){  //Retrieve <li> items within a <ul> tag
 
     alert("Running function 'getListItems'");
 
-    var childListItem = this.childNodes;
+    var x = getListsNum; //Number of <ul> elements
 
-    var x = getListsNum;
+    console.log("There are " + x + " ul tags on this page.");
+    console.log(getLists[0]); //Undefined, because there isn't a 6th <ul> tag.
 
-//Debugging
     for(i = 0; i < x; i++){
 
-        alert("Creating a span element");
+        //alert("Creating a span element");
+        var newArray = [];
+        newArray[i] = getLists.item([i]);
 
-        var addSpan = document.createElement("span");
-
-        alert("Appending a span");
-        showListNumber.appendChild(addSpan);
-
-        spanItem = document.getElementsByTagName("span").item([i]);
-        spanItem.innerHTML = "This is a generated span.<br/>";
-
-        //showListNumber.innerHTML = childListItem;
-        showListNumber2.innerHTML = 'There are ' + x + ' &lt;ul&gt; items';
-
+        console.log(newArray[0]);
 
 
     }
@@ -40,22 +32,15 @@ function getListItems(){  //Retrieve <li> items within a <ul> tag
 
 }
 
-//var func1 = getListItems();
 
-
-function createArr(func1){
+function createArr(){
 
     alert("Running function 'createArr'");
 
-    var tagGenres = []; //Create parent array to contain other arrays
+    var childListItem = this.childNodes;
 
-    for(i = 0; i < x; i++){
-
-        tagGenres[i] = getLists.item([i]);
-
-    } alert("Ending for loop");
-
-    return tagGenres;
+    var list= [];
+    list[i] =
 
 alert("Ending function 'createArr'");
 }
@@ -65,7 +50,7 @@ function displayInfo(y){
 
     alert("Running function 'displayInfo'");
 
-    showListNumber2.innerHTML = "There are " + getListsNum +" tag lists on this page.";
+    showInfo2.innerHTML = "There are " + getListsNum +" tag lists on this page.";
     if(tagGenres === true){
         alert("True");
     }
